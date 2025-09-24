@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie Library</title>
+    <title>unwind</title>
     <link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -96,34 +96,44 @@
     <div class="search-container">
       <form>
         <input type="search" placeholder="Search" aria-label="Search" />
-        <i class="fa-solid fa-magnifying-glass"></i>
       </form>
     </div>
 
-    <div class="d-flex justify-content-center align-items-center my-4 gap-3">
-      <button type="button" class="circle-btn">
+    <div class="d-flex justify-content-center align-items-center my-4">
+      <button type="button" class="circle-btn add-btn">
         <i class="fa-solid fa-plus"></i>
-      </button>
-      <button type="button" class="circle-btn">
-        <i class="fa-solid fa-minus"></i>
       </button>
     </div>
 
+    <template id="card">
+      <div class="col">
+        <div class="card h-100">
+          <img src="../images/img-1.jpg" class="card-img-top" alt="New Movie" />
+          <div class="card-body">
+            <h5 class="card-title">New Movie</h5>
+            <button class="delete-btn">
+              <i class="fa-solid fa-minus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </template>
+
     <div class="tab-content">
       <div class="tab-pane fade show active" id="watched" role="tabpanel">
-        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-5 m-5">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-5 m-5 cards">
           <div class="col">
             <div class="card h-100">
               <img
-                src="../images/img-1.jpg"
+                src="../images/img-8.jpg"
                 class="card-img-top"
                 alt="Movie 1"
               />
               <div class="card-body">
-                <h5 class="card-title">Movie 1</h5>
-                <p class="card-text">
-                  Genre: Action<br />Year: 2023<br />Rating: 8.5/10
-                </p>
+                <h5 class="card-title">A Working Man</h5>
+                <button class="delete-btn">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
               </div>
             </div>
           </div>
@@ -135,100 +145,10 @@
                 alt="Movie 2"
               />
               <div class="card-body">
-                <h5 class="card-title">Movie 2</h5>
-                <p class="card-text">
-                  Genre: Comedy<br />Year: 2022<br />Rating: 7.8/10
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="../images/img-3.jpg"
-                class="card-img-top"
-                alt="Movie 3"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Movie 3</h5>
-                <p class="card-text">
-                  Genre: Drama<br />Year: 2021<br />Rating: 8.2/10
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="../images/img-4.jpg"
-                class="card-img-top"
-                alt="Movie 4"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Movie 4</h5>
-                <p class="card-text">
-                  Genre: Horror<br />Year: 2020<br />Rating: 7.5/10
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="../images/img-5.jpg"
-                class="card-img-top"
-                alt="Movie 5"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Movie 5</h5>
-                <p class="card-text">
-                  Genre: Thriller<br />Year: 2019<br />Rating: 8.0/10
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="../images/img-6.jpg"
-                class="card-img-top"
-                alt="Movie 6"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Movie 6</h5>
-                <p class="card-text">
-                  Genre: Romance<br />Year: 2021<br />Rating: 7.9/10
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="../images/img-7.jpg"
-                class="card-img-top"
-                alt="Movie 7"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Movie 7</h5>
-                <p class="card-text">
-                  Genre: Sci-Fi<br />Year: 2023<br />Rating: 8.6/10
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="../images/img-8.jpg"
-                class="card-img-top"
-                alt="Movie 8"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Movie 8</h5>
-                <p class="card-text">
-                  Genre: Fantasy<br />Year: 2020<br />Rating: 8.1/10
-                </p>
+                <h5 class="card-title">Thunderbolts</h5>
+                <button class="delete-btn">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
               </div>
             </div>
           </div>
@@ -237,28 +157,13 @@
               <img
                 src="../images/img-9.jpg"
                 class="card-img-top"
-                alt="Movie 9"
+                alt="Movie 2"
               />
               <div class="card-body">
-                <h5 class="card-title">Movie 9</h5>
-                <p class="card-text">
-                  Genre: Animation<br />Year: 2022<br />Rating: 7.7/10
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="../images/img-10.jpg"
-                class="card-img-top"
-                alt="Movie 10"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Movie 10</h5>
-                <p class="card-text">
-                  Genre: Mystery<br />Year: 2023<br />Rating: 8.3/10
-                </p>
+                <h5 class="card-title">Highest 2 Lowest</h5>
+                <button class="delete-btn">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
               </div>
             </div>
           </div>
@@ -266,7 +171,7 @@
       </div>
 
       <div class="tab-pane fade" id="watchlist" role="tabpanel">
-        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-5 m-5">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-5 m-5 cards">
           <div class="col">
             <div class="card h-100">
               <img
@@ -275,40 +180,10 @@
                 alt="Movie 1"
               />
               <div class="card-body">
-                <h5 class="card-title">Movie 1</h5>
-                <p class="card-text">
-                  Genre: Action<br />Year: 2023<br />Rating: 8.5/10
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="../images/img-2.jpg"
-                class="card-img-top"
-                alt="Movie 2"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Movie 2</h5>
-                <p class="card-text">
-                  Genre: Comedy<br />Year: 2022<br />Rating: 7.8/10
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="../images/img-3.jpg"
-                class="card-img-top"
-                alt="Movie 3"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Movie 3</h5>
-                <p class="card-text">
-                  Genre: Drama<br />Year: 2021<br />Rating: 8.2/10
-                </p>
+                <h5 class="card-title">How to Train Your Dragon</h5>
+                <button class="delete-btn">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
               </div>
             </div>
           </div>
@@ -317,43 +192,15 @@
               <img
                 src="../images/img-4.jpg"
                 class="card-img-top"
-                alt="Movie 4"
+                alt="Movie 2"
               />
               <div class="card-body">
-                <h5 class="card-title">Movie 4</h5>
-                <p class="card-text">
-                  Genre: Horror<br />Year: 2020<br />Rating: 7.5/10
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="../images/img-5.jpg"
-                class="card-img-top"
-                alt="Movie 5"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Movie 5</h5>
-                <p class="card-text">
-                  Genre: Thriller<br />Year: 2019<br />Rating: 8.0/10
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="../images/img-6.jpg"
-                class="card-img-top"
-                alt="Movie 6"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Movie 6</h5>
-                <p class="card-text">
-                  Genre: Romance<br />Year: 2021<br />Rating: 7.9/10
-                </p>
+                <h5 class="card-title">
+                  Mission: Impossible – The Final Reckoning
+                </h5>
+                <button class="delete-btn">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
               </div>
             </div>
           </div>
@@ -362,58 +209,13 @@
               <img
                 src="../images/img-7.jpg"
                 class="card-img-top"
-                alt="Movie 7"
+                alt="Movie 3"
               />
               <div class="card-body">
-                <h5 class="card-title">Movie 7</h5>
-                <p class="card-text">
-                  Genre: Sci-Fi<br />Year: 2023<br />Rating: 8.6/10
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="../images/img-8.jpg"
-                class="card-img-top"
-                alt="Movie 8"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Movie 8</h5>
-                <p class="card-text">
-                  Genre: Fantasy<br />Year: 2020<br />Rating: 8.1/10
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="../images/img-9.jpg"
-                class="card-img-top"
-                alt="Movie 9"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Movie 9</h5>
-                <p class="card-text">
-                  Genre: Animation<br />Year: 2022<br />Rating: 7.7/10
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="../images/img-10.jpg"
-                class="card-img-top"
-                alt="Movie 10"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Movie 10</h5>
-                <p class="card-text">
-                  Genre: Mystery<br />Year: 2023<br />Rating: 8.3/10
-                </p>
+                <h5 class="card-title">F1: The Movie</h5>
+                <button class="delete-btn">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
               </div>
             </div>
           </div>
@@ -433,6 +235,8 @@
 
       <p>&copy; 2025 <span class="footer-word">un</span>wind</p>
     </section>
+    <script src="../js/add_remove.js"></script>
+    <script src="../js/search.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
