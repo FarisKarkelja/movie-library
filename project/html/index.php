@@ -1,18 +1,20 @@
 <?php
 declare(strict_types=1);
 require_once __DIR__ . '/../includes/db.php';
-echo "PDO connection ok!";
 
 $movies = [];
 $series = [];
 
 try {
-    $stmt = $pdo->query("SELECT id, title, img_url FROM movies WHERE img_url IS
-NOT NULL AND img_url <> '' ORDER BY id DESC"); $movies = $stmt->fetchAll();
-$stmt = $pdo->query("SELECT id, title, img_url FROM series WHERE img_url IS NOT
-NULL AND img_url <> '' ORDER BY id DESC"); $series = $stmt->fetchAll(); } catch
-(Throwable $e) { 
-[]; $series = []; } 
+    $stmt = $pdo->query("SELECT id, title, img_url FROM movies WHERE img_url IS NOT NULL AND img_url <> '' ORDER BY id DESC"); 
+    $movies = $stmt->fetchAll();
+
+    $stmt = $pdo->query("SELECT id, title, img_url FROM series WHERE img_url IS NOT NULL AND img_url <> '' ORDER BY id DESC"); 
+    $series = $stmt->fetchAll(); 
+} catch (Throwable $e) { 
+    $movies = [];
+    $series = [];
+}
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +44,7 @@ NULL AND img_url <> '' ORDER BY id DESC"); $series = $stmt->fetchAll(); } catch
       </div>
       <nav class="navbar navbar-expand-lg py-4 py-lg-0 shadow">
         <div class="container px-4">
-          <a href="../html/index.html">
+          <a href="../html/index.php">
             <img class="logo" src="../images/logo.png" alt="Logo" />
           </a>
           <button
@@ -74,7 +76,7 @@ NULL AND img_url <> '' ORDER BY id DESC"); $series = $stmt->fetchAll(); } catch
             </button>
             <ul class="navbar-nav ms-lg-auto p-4 p-lg-0">
               <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                <a class="nav-link" href="../html/index.html">Home</a>
+                <a class="nav-link" href="../html/index.php">Home</a>
               </li>
               <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
                 <a class="nav-link" href="../html/library.html">Library</a>
@@ -103,7 +105,6 @@ NULL AND img_url <> '' ORDER BY id DESC"); $series = $stmt->fetchAll(); } catch
           />
         </div>
         <?php endforeach; ?>
-        <?php // dupliraj radi “infinite” efekta ?>
         <?php foreach ($movies as $m): ?>
         <div class="slide">
           <img
@@ -113,7 +114,7 @@ NULL AND img_url <> '' ORDER BY id DESC"); $series = $stmt->fetchAll(); } catch
         </div>
         <?php endforeach; ?>
         <?php else: ?>
-        <div class="text-center w-100 py-5">Nema filmova u bazi.</div>
+        <div class="text-center w-100 py-5">No movies found.</div>
         <?php endif; ?>
       </div>
     </div>
@@ -130,7 +131,6 @@ NULL AND img_url <> '' ORDER BY id DESC"); $series = $stmt->fetchAll(); } catch
           />
         </div>
         <?php endforeach; ?>
-        <?php // dupliraj radi “infinite” efekta ?>
         <?php foreach ($series as $s): ?>
         <div class="slide">
           <img
@@ -140,7 +140,7 @@ NULL AND img_url <> '' ORDER BY id DESC"); $series = $stmt->fetchAll(); } catch
         </div>
         <?php endforeach; ?>
         <?php else: ?>
-        <div class="text-center w-100 py-5">Nema serija u bazi.</div>
+        <div class="text-center w-100 py-5">No tv shows found.</div>
         <?php endif; ?>
       </div>
     </div>
@@ -313,7 +313,7 @@ NULL AND img_url <> '' ORDER BY id DESC"); $series = $stmt->fetchAll(); } catch
         />
         <p class="copy">&copy; 2025 unwind</p>
         <nav class="footer-nav">
-          <a href="../html/index.html">Home</a>
+          <a href="../html/index.php">Home</a>
           <a href="../html/library.html">Library</a>
           <a href="../html/about.html">About</a>
           <a href="../html/contact.html">Contact</a>

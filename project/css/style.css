@@ -223,7 +223,7 @@ footer {
 }
 
 .slider {
-  height: 250px;
+  height: 350px;
   margin: auto;
   position: relative;
   width: 90%;
@@ -242,21 +242,22 @@ footer {
 
 .slide-track {
   display: flex;
-  width: calc(250px * 14);
+  width: calc(250px * 18);
   animation: scroll-left 60s linear infinite;
 }
 
 .slide-track-reverse {
   display: flex;
-  width: calc(250px * 14);
+  width: calc(250px * 18);
   animation: scroll-right 60s linear infinite;
 }
 
 .slide-track-trailers {
   display: flex;
-  gap: 80px;
-  animation: scroll-left-trailers 80s linear infinite;
+  gap: 20px;
+  animation: scroll-left-trailers 60s linear infinite;
 }
+
 
 .slide-track:hover,
 .slide-track-reverse:hover,
@@ -269,13 +270,13 @@ footer {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-250px * 7));
+    transform: translateX(calc(-250px * 9));
   }
 }
 
 @keyframes scroll-right {
   0% {
-    transform: translateX(calc(-250px * 7));
+    transform: translateX(calc(-250px * 9));
   }
   100% {
     transform: translateX(0);
@@ -287,26 +288,28 @@ footer {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-850px * 5));
+    transform: translateX(calc(-250px * 5));
   }
 }
 
 .slide {
-  height: 200px;
-  width: 250px;
+  height: 350px;
+  width: 350px;
   display: flex;
   align-items: center;
   padding: 15px;
-  perspective: 100px;
 }
 
-img {
+.slide img {
   width: 100%;
+  height: 100%;
   transition: transform 1s;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
-img:hover {
-  transform: translateZ(20px);
+.slide img:hover {
+  transform: scale(1.08);
 }
 
 .slider::before,
