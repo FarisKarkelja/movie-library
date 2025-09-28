@@ -13,13 +13,13 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
     />
-    <link href="../css/style.css" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg py-4 py-lg-0 shadow">
       <div class="container px-4">
-        <a href="../html/index.php">
-          <img class="logo" src="../images/logo.png" alt="Logo" />
+        <a href="index.php">
+          <img class="logo" src="./images/logo.png" alt="Logo" />
         </a>
         <button
           class="navbar-toggler border-0"
@@ -44,22 +44,22 @@
             aria-controls="top-navbar"
           >
             <div class="d-flex justify-content-between p-3">
-              <img class="logo" src="../images/logo.png" alt="Logo" />
+              <img class="logo" src="./images/logo.png" alt="Logo" />
               <i class="fa-solid fa-xmark"></i>
             </div>
           </button>
           <ul class="navbar-nav ms-lg-auto p-4 p-lg-0">
             <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-              <a class="nav-link" href="../html/index.php">Home</a>
+              <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-              <a class="nav-link" href="../html/library.html">Library</a>
+              <a class="nav-link" href="library.html">Library</a>
             </li>
             <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-              <a class="nav-link" href="../html/about.html">About</a>
+              <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-              <a class="nav-link" href="../html/contact.html">Contact</a>
+              <a class="nav-link" href="contact.html">Contact</a>
             </li>
           </ul>
         </div>
@@ -109,7 +109,7 @@
       <div class="col">
         <div class="card h-100">
           <img
-            src="../images/card-img.jpg"
+            src="./images/card-img.jpg"
             class="card-img-top"
             alt="New Movie"
           />
@@ -124,62 +124,12 @@
     </template>
 
     <div class="tab-content">
-      <div class="tab-pane fade show active" id="watched" role="tabpanel">
-        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-5 m-5 cards">
+      <div class="tab-pane fade" id="watched" role="tabpanel">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-5 m-5 cards">
           <div class="col">
             <div class="card h-100">
               <img
-                src="../images/img-8.jpg"
-                class="card-img-top"
-                alt="Movie 1"
-              />
-              <div class="card-body">
-                <h5 class="card-title">A Working Man</h5>
-                <button class="delete-btn">
-                  <i class="fa-solid fa-minus"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="../images/img-2.jpg"
-                class="card-img-top"
-                alt="Movie 2"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Thunderbolts</h5>
-                <button class="delete-btn">
-                  <i class="fa-solid fa-minus"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="../images/img-9.jpg"
-                class="card-img-top"
-                alt="Movie 2"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Highest 2 Lowest</h5>
-                <button class="delete-btn">
-                  <i class="fa-solid fa-minus"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tab-pane fade" id="watchlist" role="tabpanel">
-        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-5 m-5 cards">
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="../images/img-1.jpg"
+                src="./images/img-1.jpg"
                 class="card-img-top"
                 alt="Movie 1"
               />
@@ -194,13 +144,43 @@
           <div class="col">
             <div class="card h-100">
               <img
-                src="../images/img-4.jpg"
+                src="./images/img-2.jpg"
                 class="card-img-top"
                 alt="Movie 2"
               />
               <div class="card-body">
+                <h5 class="card-title">Thunderbolts</h5>
+                <button class="delete-btn">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="./images/img-3.jpg"
+                class="card-img-top"
+                alt="Movie 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">The Smashing Machine</h5>
+                <button class="delete-btn">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="./images/img-4.jpg"
+                class="card-img-top"
+                alt="Movie 4"
+              />
+              <div class="card-body">
                 <h5 class="card-title">
-                  Mission: Impossible – The Final Reckoning
+                  Mission: Impossible - The Final Reckoning
                 </h5>
                 <button class="delete-btn">
                   <i class="fa-solid fa-minus"></i>
@@ -211,12 +191,94 @@
           <div class="col">
             <div class="card h-100">
               <img
-                src="../images/img-7.jpg"
+                src="./images/img-5.jpg"
                 class="card-img-top"
-                alt="Movie 3"
+                alt="Movie 5"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  From the World of John Wick: Ballerina
+                </h5>
+                <button class="delete-btn">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade show active" id="watchlist" role="tabpanel">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-5 m-5 cards">
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="./images/img-6.jpg"
+                class="card-img-top"
+                alt="Movie 6"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Lilo & Stitch</h5>
+                <button class="delete-btn">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="./images/img-7.jpg"
+                class="card-img-top"
+                alt="Movie 7"
               />
               <div class="card-body">
                 <h5 class="card-title">F1: The Movie</h5>
+                <button class="delete-btn">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="./images/img-8.jpg"
+                class="card-img-top"
+                alt="Movie 8"
+              />
+              <div class="card-body">
+                <h5 class="card-title">A Working Man</h5>
+                <button class="delete-btn">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="./images/img-9.jpg"
+                class="card-img-top"
+                alt="Movie 9"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Highest 2 Lowest</h5>
+                <button class="delete-btn">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="./images/img-10.jpg"
+                class="card-img-top"
+                alt="Movie 10"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Eddington</h5>
                 <button class="delete-btn">
                   <i class="fa-solid fa-minus"></i>
                 </button>
@@ -231,22 +293,22 @@
       <div class="footer-content">
         <p class="tagline">Sit back. Press play.</p>
         <img
-          src="../images/logo-no-bg.png"
+          src="./images/logo-no-bg.png"
           alt="Unwind Logo"
           class="footer-logo"
         />
         <p class="copy">&copy; 2025 unwind</p>
         <nav class="footer-nav">
-          <a href="../html/index.php">Home</a>
-          <a href="../html/library.html">Library</a>
-          <a href="../html/about.html">About</a>
-          <a href="../html/contact.html">Contact</a>
+          <a href="index.php">Home</a>
+          <a href="library.html">Library</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
         </nav>
       </div>
     </footer>
 
-    <script src="../js/add_remove.js"></script>
-    <script src="../js/search.js"></script>
+    <script src="./js/add_remove.js"></script>
+    <script src="./js/search.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"

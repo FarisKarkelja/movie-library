@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-require_once __DIR__ . '/../includes/db.php';
+require_once __DIR__ . '/includes/db.php';
 
 $movies = [];
 $series = [];
@@ -32,20 +32,20 @@ try {
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
     />
-    <link href="../css/style.css" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet" />
   </head>
   <body>
     <section class="header-section">
       <div class="header-text">
         <h1>
-          <img src="../images/logo-no-bg.png" alt="unwind" class="title-word" />
+          <img src="./images/logo-no-bg.png" alt="unwind" class="title-word" />
         </h1>
         <h2>Sit Back. Press Play.</h2>
       </div>
       <nav class="navbar navbar-expand-lg py-4 py-lg-0 shadow">
         <div class="container px-4">
-          <a href="../html/index.php">
-            <img class="logo" src="../images/logo.png" alt="Logo" />
+          <a href="index.php">
+            <img class="logo" src="./images/logo.png" alt="Logo" />
           </a>
           <button
             class="navbar-toggler border-0"
@@ -70,22 +70,22 @@ try {
               aria-controls="top-navbar"
             >
               <div class="d-flex justify-content-between p-3">
-                <img class="logo" src="../images/logo.png" alt="Logo" />
+                <img class="logo" src="./images/logo.png" alt="Logo" />
                 <i class="fa-solid fa-xmark"></i>
               </div>
             </button>
             <ul class="navbar-nav ms-lg-auto p-4 p-lg-0">
               <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                <a class="nav-link" href="../html/index.php">Home</a>
+                <a class="nav-link" href="index.php">Home</a>
               </li>
               <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                <a class="nav-link" href="../html/library.html">Library</a>
+                <a class="nav-link" href="library.html">Library</a>
               </li>
               <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                <a class="nav-link" href="../html/about.html">About</a>
+                <a class="nav-link" href="about.html">About</a>
               </li>
               <li class="nav-item px-3 px-lg-0 py-1 py-lg-4">
-                <a class="nav-link" href="../html/contact.html">Contact</a>
+                <a class="nav-link" href="contact.html">Contact</a>
               </li>
             </ul>
           </div>
@@ -307,16 +307,16 @@ try {
       <div class="footer-content">
         <p class="tagline">Sit back. Press play.</p>
         <img
-          src="../images/logo-no-bg.png"
+          src="./images/logo-no-bg.png"
           alt="Unwind Logo"
           class="footer-logo"
         />
         <p class="copy">&copy; 2025 unwind</p>
         <nav class="footer-nav">
-          <a href="../html/index.php">Home</a>
-          <a href="../html/library.html">Library</a>
-          <a href="../html/about.html">About</a>
-          <a href="../html/contact.html">Contact</a>
+          <a href="index.php">Home</a>
+          <a href="library.html">Library</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
         </nav>
       </div>
     </footer>

@@ -51,6 +51,20 @@ body {
   font-weight: 400;
 }
 
+@media (max-width: 992px) {
+  .header-section {
+    height: 660px;
+  }
+
+  .header-text h1 img {
+    width: 300px;
+  }
+
+  .header-text h2 {
+    font-size: 1.1rem;
+  }
+}
+
 /* Footer Section */
 
 footer {
@@ -258,7 +272,6 @@ footer {
   animation: scroll-left-trailers 60s linear infinite;
 }
 
-
 .slide-track:hover,
 .slide-track-reverse:hover,
 .slide-track-trailers:hover {
@@ -454,7 +467,7 @@ footer {
   font-size: 18px;
   line-height: 28px;
   letter-spacing: 1px;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -471,7 +484,7 @@ footer {
   }
   .biography p {
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 

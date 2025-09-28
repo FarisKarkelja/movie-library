@@ -32,7 +32,7 @@
       return {
         id: crypto.randomUUID(),
         title: (title?.textContent || "Untitled").trim(),
-        img: img?.getAttribute("src") || "../images/card-img.jpg",
+        img: img?.getAttribute("src") || "./images/card-img.jpg",
       };
     });
   }
@@ -58,7 +58,7 @@
       return;
     }
     let img = prompt("Enter image URL (leave empty for default):") || "";
-    img = img.trim() || "../images/card-img.jpg";
+    img = img.trim() || "./images/card-img.jpg";
 
     const listKey = STORAGE_KEYS[activePane];
     const list = loadList(listKey);
@@ -126,7 +126,7 @@
       img.alt = movie.title;
       img.src = movie.img;
       img.addEventListener("error", () => {
-        img.src = "../images/card-img.jpg";
+        img.src = "./images/card-img.jpg";
       });
 
       const body = document.createElement("div");
