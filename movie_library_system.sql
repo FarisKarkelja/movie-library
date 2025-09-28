@@ -1,0 +1,119 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Sep 28, 2025 at 04:27 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `movie_library_system`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `movies`
+--
+
+CREATE TABLE `movies` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `genre` varchar(100) NOT NULL,
+  `description` blob NOT NULL,
+  `created_at` date NOT NULL,
+  `img_url` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `movies`
+--
+
+INSERT INTO `movies` (`id`, `title`, `genre`, `description`, `created_at`, `img_url`) VALUES
+(4, 'How to Train Your Dragon', 'Animation/Adventure', 0x4120796f756e672056696b696e67206265667269656e6473206120647261676f6e20616e64206c6561726e7320746f207365652074686520776f726c6420646966666572656e746c792e, '2025-06-06', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/53dsJ3oEnBhTBVMigWJ9tkA5bzJ.jpg'),
+(5, 'Highest 2 Lowest', 'Comedy/Drama', 0x54776f20756e6c696b656c7920667269656e6473206e61766967617465206c69666527732075707320616e6420646f776e7320696e206120736d616c6c20746f776e2e, '2025-08-14', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/RFQtinuiHhOnbmJaCn3uzegCYF.jpg'),
+(6, 'A Working Man', 'Drama', 0x41206d616e207374727567676c657320746f2062616c616e636520776f726b2c2066616d696c792c20616e6420706572736f6e616c20647265616d7320696e2061206d6f6465726e20776f726c642e, '2025-03-26', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6FRFIogh3zFnVWn7Z6zcYnIbRcX.jpg'),
+(7, 'F1 The Movie', 'Documentary/Sports', 0x416e20696e73696465206c6f6f6b2061742074686520746872696c6c696e6720776f726c64206f6620466f726d756c61203120726163696e672e, '2025-06-25', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/9PXZIUsSDh4alB80jheWX4fhZmy.jpg'),
+(8, 'Lilo & Stitch', 'Animation/Family', 0x4120796f756e67206769726c2061646f7074732061206d697363686965766f757320616c69656e2077686f206265636f6d65732070617274206f6620686572206f68616e612e, '2025-05-17', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/ckQzKpQJO4ZQDCN5evdpKcfm7Ys.jpg'),
+(9, 'Ballerina', 'Animation/Family', 0x4120796f756e67206769726c20707572737565732068657220647265616d206f66206265636f6d696e6720612066616d6f75732062616c6c6572696e6120696e2050617269732e, '2025-06-04', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/4sbqReLivBN4e7OOwG6PkSGcKHt.jpg'),
+(10, 'Mission Impossible: Final Reckoning', 'Action/Thriller', 0x457468616e2048756e7420666163657320686973206d6f73742064616e6765726f7573206d697373696f6e2079657420746f20736176652074686520776f726c642e, '2025-05-17', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/z53D72EAOxGRqdr7KXXWp9dJiDe.jpg'),
+(11, 'The Smashing Machine', 'Action/Sports', 0x416e20696e74656e73652073746f727920666f6c6c6f77696e6720746865206c696665206f6620612070726f66657373696f6e616c206669676874657220616e6420686973206368616c6c656e6765732e, '2025-10-02', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/mPuBDGrVIBGOymBxR6rO3iIvBSe.jpg'),
+(12, 'Thunderbolts', 'Action/Adventure', 0x41207465616d206f6620616e74696865726f657320636f6d657320746f67657468657220666f72206120686967682d7374616b6573206d697373696f6e2e, '2025-04-30', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hqcexYHbiTBfDIdDWxrxPtVndBX.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `series`
+--
+
+CREATE TABLE `series` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `genre` varchar(100) NOT NULL,
+  `description` blob NOT NULL,
+  `created_at` date NOT NULL,
+  `img_url` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `series`
+--
+
+INSERT INTO `series` (`id`, `title`, `genre`, `description`, `created_at`, `img_url`) VALUES
+(4, 'Side Quest', 'Adventure/Comedy', 0x412067726f7570206f6620616476656e74757265727320656d6261726b73206f6e20756e6578706563746564207175657374732066696c6c656420776974682068756d6f7220616e64206368616c6c656e6765732e, '2025-03-25', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/1DGS6UQ063QLAjLlBAvKY5GcsM4.jpg'),
+(5, 'Mythic Quest', 'Comedy/Drama', 0x4120766964656f2067616d652073747564696f206e61766967617465732074686520747269616c73206f66206372656174696e67206120706f70756c6172204d4d4f5250472e, '2020-02-07', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/7QxQlpqEjx3vRpEtuh6Y0R6eY9O.jpg'),
+(6, 'Last of Us', 'Drama/Action', 0x496e206120706f73742d61706f63616c797074696320776f726c642c206120736d7567676c657220616e64206120796f756e67206769726c206a6f75726e6579206163726f7373207468652055532e, '2025-01-15', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/dmo6TYuuJgaYinXBPjrgG9mB5od.jpg'),
+(7, 'The Pitt', 'Thriller/Drama', 0x412074656e736520746872696c6c6572207265766f6c76696e672061726f756e64206120736d616c6c20746f776e2077697468206461726b20736563726574732e, '2025-01-09', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6fMGktEDXMZZPACJ5cWkVQ6TSte.jpg'),
+(8, 'Daredevil', 'Action/Crime', 0x426c696e64206c6177796572204d617474204d7572646f636b20666967687473206372696d6520696e2048656c6c2773204b69746368656e2061732044617265646576696c2e, '2025-03-04', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/9lLuhV703HGCbnz6FxnqCwIwzAZ.jpg'),
+(9, 'Black Rabbit', 'Drama/Crime', 0x412073757370656e736566756c207365726965732077686572652073656372657473206172652072657665616c656420696e206120686967682d7374616b657320706f6b65722067616d652e, '2025-09-18', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/4e9CraVtGY00jLP2YGwsuEtaIjR.jpg'),
+(10, 'Your Friends & Neighbors', 'Drama/Comedy', 0x41206461726b20636f6d656479206578706c6f72696e67207468652074616e676c65642072656c6174696f6e736869707320616d6f6e6720667269656e647320616e64206e65696768626f72732e, '2025-04-10', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/5Red8BT8N0YaWumXMQhuoGP40Ox.jpg'),
+(11, 'White Lotus', 'Comedy/Drama', 0x47756573747320616e6420737461666620617420612074726f706963616c207265736f727420657870657269656e636520756e65787065637465642074776973747320616e64206472616d612e, '2021-07-11', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/gbSaK9v1CbcYH1ISgbM7XObD2dW.jpg'),
+(12, 'Task', 'Crime/Drama', 0x4120717569726b79207265616c697479207365726965732073686f77636173696e67206c696665206174206120737472616e67652c206964796c6c6963207265736f72742e, '2025-09-07', 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/9JdL1aQdAQiyYYQ2xCqbHaEcZt8.jpg');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `movies`
+--
+ALTER TABLE `movies`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `series`
+--
+ALTER TABLE `series`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `movies`
+--
+ALTER TABLE `movies`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `series`
+--
+ALTER TABLE `series`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
