@@ -1,40 +1,13 @@
 (function () {
-  const STORAGE_KEYS = {
-    watched: "movies_watched",
-    watchlist: "movies_watchlist",
-  };
-
   const addBtn = document.querySelector(".add-btn");
 
   init();
 
   function init() {
-    Object.entries(STORAGE_KEYS).forEach(([paneId, key]) => {
-      if (!localStorage.getItem(key)) {
-        const data = readCardsFromDOM(paneId);
-        saveList(key, data);
-      }
-    });
-
     renderAll();
 
     addBtn?.addEventListener("click", onAdd);
     document.addEventListener("click", onDeleteClick);
-  }
-
-  function readCardsFromDOM(paneId) {
-    const container = document.querySelector(`#${paneId} .cards`);
-    if (!container) return [];
-    const cards = [...container.querySelectorAll(".card")];
-    return cards.map((card) => {
-      const img = card.querySelector("img");
-      const title = card.querySelector(".card-title");
-      return {
-        id: crypto.randomUUID(),
-        title: (title?.textContent || "Untitled").trim(),
-        img: img?.getAttribute("src") || "./images/card-img.jpg",
-      };
-    });
   }
 
   function getActivePaneId() {
@@ -46,9 +19,8 @@
     return "watched";
   }
 
-  function onAdd() {
+  async function onAdd() {
     const activePane = getActivePaneId();
-    if (!STORAGE_KEYS[activePane]) return;
 
     const title = prompt("Enter movie title:");
     if (title === null) return;
@@ -60,18 +32,21 @@
     let img = prompt("Enter image URL (leave empty for default):") || "";
     img = img.trim() || "./images/card-img.jpg";
 
-    const listKey = STORAGE_KEYS[activePane];
-    const list = loadList(listKey);
-    list.push({
-      id: crypto.randomUUID(),
-      title: trimmedTitle,
-      img,
+    await fetch("library.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        action: "add",
+        title: trimmedTitle,
+        img: img,
+        listType: activePane,
+      }),
     });
-    saveList(listKey, list);
+
     renderList(activePane);
   }
 
-  function onDeleteClick(e) {
+  async function onDeleteClick(e) {
     const btn = e.target.closest(".delete-btn");
     if (!btn) return;
     const card = btn.closest(".col");
@@ -79,37 +54,31 @@
     const pane = card.closest(".tab-pane");
     if (!pane) return;
     const paneId = pane.id;
-    const listKey = STORAGE_KEYS[paneId];
-    if (!listKey) return;
 
     const movieId = card.dataset.id;
-    let list = loadList(listKey);
-    list = list.filter((m) => m.id !== movieId);
-    saveList(listKey, list);
+
+    await fetch("library.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        action: "delete",
+        id: movieId,
+      }),
+    });
+
     card.remove();
   }
 
-  function loadList(key) {
-    try {
-      return JSON.parse(localStorage.getItem(key)) || [];
-    } catch {
-      return [];
-    }
-  }
-
-  function saveList(key, list) {
-    localStorage.setItem(key, JSON.stringify(list));
-  }
-
   function renderAll() {
-    Object.keys(STORAGE_KEYS).forEach((paneId) => renderList(paneId));
+    ["watched", "watchlist"].forEach((paneId) => renderList(paneId));
   }
 
-  function renderList(paneId) {
-    const listKey = STORAGE_KEYS[paneId];
+  async function renderList(paneId) {
     const container = document.querySelector(`#${paneId} .cards`);
     if (!container) return;
-    const list = loadList(listKey);
+
+    const res = await fetch(`library.php?action=list&listType=${paneId}`);
+    const list = await res.json();
 
     container.innerHTML = "";
 
