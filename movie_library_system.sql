@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2025 at 04:27 PM
+-- Generation Time: Sep 30, 2025 at 02:03 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,35 @@ SET time_zone = "+00:00";
 --
 -- Database: `movie_library_system`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `library`
+--
+
+CREATE TABLE `library` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `img` varchar(255) DEFAULT './images/card-img.jpg',
+  `list_type` enum('watched','watchlist') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `library`
+--
+
+INSERT INTO `library` (`id`, `title`, `img`, `list_type`) VALUES
+(32, 'How to Train Your Dragon', './images/img-1.jpg', 'watched'),
+(33, 'Thunderbolts', './images/img-2.jpg', 'watched'),
+(34, 'The Smashing Machine', './images/img-3.jpg', 'watched'),
+(35, 'Mission: Impossible - The Final Reckoning', './images/img-4.jpg', 'watched'),
+(36, 'From the World of John Wick: Ballerina', './images/img-5.jpg', 'watched'),
+(37, 'Lilo & Stitch', './images/img-6.jpg', 'watchlist'),
+(38, 'F1: The Movie', './images/img-7.jpg', 'watchlist'),
+(39, 'A Working Man', './images/img-8.jpg', 'watchlist'),
+(40, 'Highest 2 Lowest', './images/img-9.jpg', 'watchlist'),
+(41, 'Eddington', './images/img-10.jpg', 'watchlist');
 
 -- --------------------------------------------------------
 
@@ -86,6 +115,12 @@ INSERT INTO `series` (`id`, `title`, `genre`, `description`, `created_at`, `img_
 --
 
 --
+-- Indexes for table `library`
+--
+ALTER TABLE `library`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `movies`
 --
 ALTER TABLE `movies`
@@ -100,6 +135,12 @@ ALTER TABLE `series`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `library`
+--
+ALTER TABLE `library`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `movies`
